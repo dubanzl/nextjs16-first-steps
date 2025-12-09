@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "events-api-collection",
+		"name": "Events API",
+		"description": "Collection for creating and retrieving events",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Next.js 16 Workshop",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Learn the latest features of Next.js 16 including Server Components, Server Actions, and more.",
+							"type": "text"
+						},
+						{
+							"key": "overview",
+							"value": "A comprehensive workshop covering Next.js 16 fundamentals and advanced topics.",
+							"type": "text"
+						},
+						{
+							"key": "venue",
+							"value": "Tech Conference Center",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "San Francisco, CA",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2024-12-15",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "10:00",
+							"type": "text",
+							"description": "Format: HH:MM (24-hour) or HH:MM AM/PM"
+						},
+						{
+							"key": "mode",
+							"value": "hybrid",
+							"type": "text",
+							"description": "Options: online, offline, hybrid"
+						},
+						{
+							"key": "audience",
+							"value": "Developers",
+							"type": "text"
+						},
+						{
+							"key": "organizer",
+							"value": "Tech Events Inc.",
+							"type": "text"
+						},
+						{
+							"key": "tags",
+							"value": "[\"nextjs\", \"react\", \"web-development\", \"workshop\"]",
+							"type": "text",
+							"description": "JSON array of strings"
+						},
+						{
+							"key": "agenda",
+							"value": "[\"Introduction to Next.js 16\", \"Server Components\", \"Server Actions\", \"Q&A Session\"]",
+							"type": "text",
+							"description": "JSON array of strings"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": [],
+							"description": "Event image file (required)"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/events",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"events"
+					]
+				},
+				"description": "Create a new event with image upload. The image will be uploaded to Cloudinary and the secure URL will be stored."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/events",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"events"
+					]
+				},
+				"description": "Retrieve all events sorted by creation date (newest first)"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
+
+
+
